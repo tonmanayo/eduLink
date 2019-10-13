@@ -1,0 +1,33 @@
+{
+  "name": "edulink",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "server": "./node_modules/nodemon/bin/nodemon.js --exec babel-node bin/www"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.9.6",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "graphql": "^14.5.8",
+    "morgan": "~1.9.1",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.19.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "faker": "^4.1.0",
+    "lodash.random": "^3.2.0",
+    "lodash.times": "^4.3.2",
+    "nodemon": "^1.19.3",
+    "sequelize-cli": "^5.5.1",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9"
+  }
+}
