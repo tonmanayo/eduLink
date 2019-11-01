@@ -4,10 +4,25 @@ type Company {
     users: [User]
 }
 
+input CompanyInput {
+    users: [companyUsers]
+    name: String
+}
+
+input companyUsers {
+    email: String
+}
+
 input CompanyWhere {
     id: Int
 }
 
 type Query {
-    getCompany(where: CompanyWhere, limit: Int, offset: Int): Company
+    getCompany(where: CompanyWhere, limit: Int, offset: Int): Company @isAuth
+    getCompanies(limit: Int, offset: Int, query: String): [Company]
+}
+
+type Mutation {
+    createCompany(data: CompanyInput): Company
+    deleteCompany(id: Int): Company
 }
