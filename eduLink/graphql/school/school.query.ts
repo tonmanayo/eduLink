@@ -1,11 +1,11 @@
 import { resolver } from 'graphql-sequelize';
-import {Company} from '../../models';
+import {School} from '../../models';
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
 export const Query = {
-    getCompany: resolver(Company),
-    getCompanies: resolver(Company, {
+    getSchool: resolver(School),
+    getSchools: resolver(School, {
         before: async (findOptions, args) => {
             // filter the results
             if (args.query) {
@@ -20,8 +20,8 @@ export const Query = {
             return findOptions
 
         },
-        after: async (companies) => {
-            return companies
+        after: async (schools) => {
+            return schools
         }
     }),
 };

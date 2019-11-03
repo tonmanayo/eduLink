@@ -1,5 +1,5 @@
 import { Table, Column, Model, BelongsTo, ForeignKey, BeforeSave } from 'sequelize-typescript';
-import { Company } from "./company.model";
+import { School } from "./school.model";
 import * as bcrypt from 'bcrypt';
 import to from 'await-to-js';
 import * as jsonwebtoken from'jsonwebtoken';
@@ -23,12 +23,12 @@ export class User extends Model<User> {
   @Column
   password: string;
 
-  @ForeignKey(() => Company)
+  @ForeignKey(() => School)
   @Column
-  companyId: number;
+  schoolId: number;
 
-  @BelongsTo(() => Company)
-  company: Company;
+  @BelongsTo(() => School)
+  school: School;
 
   jwt: string;
   login: boolean;

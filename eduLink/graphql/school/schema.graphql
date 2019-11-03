@@ -1,0 +1,28 @@
+type School {
+    id: Int
+    name: String
+    users: [User]
+}
+
+input SchoolInput {
+    name: String
+}
+
+input schoolUsers {
+    email: String
+}
+
+input SchoolWhere {
+    id: Int
+}
+
+type Query {
+    getSchool(where: SchoolWhere, limit: Int, offset: Int): School @isAuth
+    getSchools(limit: Int, offset: Int, query: String): [School]
+}
+
+type Mutation {
+    createSchool(data: SchoolInput): School
+    updateSchool(data: SchoolInput, id: Int): School
+    deleteSchool(id: Int): School
+}

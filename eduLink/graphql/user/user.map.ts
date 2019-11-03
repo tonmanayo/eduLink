@@ -2,6 +2,6 @@ import { resolver } from 'graphql-sequelize';
 import { User } from '../../models';
 
 export const UserMap = {
-    company: resolver(User.associations.company),
+    school: resolver(User.associations.school),
     jwt: (user) => user.getJwt(),
 };

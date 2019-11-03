@@ -16,4 +16,4 @@ export const sequelize = new Sequelize(ENV.DB_NAME, ENV.DB_USER, undefined, {
 });
 
 export { User } from './user.model'
-export { Company } from './company.model'
+export { School } from './school.model'
